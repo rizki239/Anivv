@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Dania | Hari Jadi Kita 19-07-2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap');
+        
+        :root {
+            --gold: #D4AF37;
+            --rose: #E8A87C;
+            --dark: #1A1A2E;
+            --light: #FDF6EC;
+            --accent: #FF2E63;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Floating Hearts Background */
+        .hearts-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .heart {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23E8A87C"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
+            background-size: contain;
+            opacity: 0;
+            animation: float 15s linear infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-20vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 300;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.7)), 
+                        url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--gold), var(--rose));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+        
+        .hero h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 2rem;
+            font-weight: normal;
+        }
+        
+        .date {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 3rem;
+            letter-spacing: 3px;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--light);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Message Section */
+        .message {
+            padding: 100px 20px;
+            background: linear-gradient(to bottom, var(--dark), #16213E);
+            position: relative;
+        }
+        
+        .message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--dark), transparent);
+            z-index: 1;
+        }
+        
+        .message-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-container::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .message h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .message p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .message p::before {
+            content: '❤';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--rose);
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--gold);
+            text-align: right;
+            margin-top: 30px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 20px;
+            background: linear-gradient(to bottom, #16213E, #0F3460);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            height: 400px;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Countdown Section */
+        .countdown {
+            padding: 100px 20px;
+            background: linear-gradient(to bottom, #0F3460, var(--dark));
+            text-align: center;
+        }
+        
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            min-width: 150px;
+            transition: all 0.3s ease;
+        }
+        
+        .countdown-box:hover {
+            transform: translateY(-10px);
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+        
+        .countdown-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--gold);
+            line-height: 1;
+        }
+        
+        .countdown-label {
+            font-size: 1.2rem;
+            color: var(--light);
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .date {
+                font-size: 1.2rem;
+            }
+            
+            .message-container {
+                padding: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .countdown-box {
+                min-width: 120px;
+                padding: 20px;
+            }
+            
+            .countdown-value {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .countdown-container {
+                gap: 15px;
+            }
+            
+            .countdown-box {
+                min-width: 80px;
+                padding: 15px;
+            }
+            
+            .countdown-value {
+                font-size: 2rem;
+            }
+            
+            .countdown-label {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-bg" id="hearts-bg"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="logo">Dania & Rizki</div>
+        <div class="nav-links">
+            <a href="#message">Pesan</a>
+            <a href="#gallery">Galeri</a>
+            <a href="#countdown">Hitungan Mundur</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Selamat Hari Jadi</h1>
+            <h2>Dania Mustika Putri</h2>
+            <div class="date">19 • 07 • 2025</div>
+            <p>Setiap momen bersamamu menjadi kenangan indah</p>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    
+    <!-- Message Section -->
+    <section class="message" id="message">
+        <div class="message-container">
+            <h2>Sayangku Dania</h2>
+            <p>Di hari istimewa ini, aku merasa sangat bersyukur memilikimu dalam hidupku. Kaulah jiwa tercantik yang pernah kukenal, dan setiap hari bersamamu terasa seperti anugerah.</p>
+            <p>Ingat kencan pertama kita? Aku sangat gugup, tapi senyummu langsung membuatku tenang. Itulah keajaibanmu - kau membuat segalanya lebih baik hanya dengan menjadi dirimu.</p>
+            <p>Melalui semua tawa, petualangan, bahkan momen-momen tenang kita, kau telah menunjukkan padaku arti cinta sejati. Kebaikan, kecerdasan, dan jiwa indahmu terus membuatku takjub setiap harinya.</p>
+            <p>Hari jadi ini menandai enam tahun  kita tumbuh bersama, saling mengenal, dan membangun sesuatu yang benar-benar istimewa. Aku berjanji akan terus menghargaimu, mendukungmu, dan mencintaimu lebih dalam setiap harinya.</p>
+            <p>Untuk kita, untuk cinta kita, dan untuk bertahun-tahun kebahagiaan bersama. Kau adalah hari ini dan semua esokku.</p>
+            <div class="signature">Selamanya milikmu</div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="section-title">
+            <h2>Perjalanan Kita</h2>
+            <p>Kenangan yang kita ciptakan bersama, momen yang membeku dalam waktu</p>
+        </div>
+        <div class="gallery-grid">
+            <!-- Replace these with your actual photos -->
+            <div class="gallery-item">
+                <img src="terbaru.jpg" alt="Kenangan kita">
+                <div class="gallery-caption">kencan</div>
+            </div>
+            <div class="gallery-item">
+                <img src="pantai.jpg" alt="Kenangan kita">
+                <div class="gallery-caption">Liburan pantai</div>
+            </div>
+            <div class="gallery-item">
+                <img src="Wkb.jpg" alt="Kenangan kita">
+                <div class="gallery-caption">sore hari</div>
+            </div>
+            <div class="gallery-item">
+                <img src="senyuman.jpg" alt="Kenangan kita">
+                <div class="gallery-caption">Senyum indahmu</div>
+            </div>
+            <div class="gallery-item">
+                <img src="perjalanan.jpg" alt="Kenangan kita">
+                <div class="gallery-caption">Jelajah bersama</div>
+            </div>
+            <div class="gallery-item">
+                <img src="kota cil.jpg" alt="Kenangan kita">
+                <div class="gallery-caption">Petualangan kota</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Countdown Section -->
+    <section class="countdown" id="countdown">
+        <div class="section-title">
+            <h2>Menuju Hari Jadi Berikutnya</h2>
+            <p>Menghitung detik hingga kita merayakan lagi</p>
+        </div>
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <div class="countdown-value" id="days">00</div>
+                <div class="countdown-label">Hari</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="hours">00</div>
+                <div class="countdown-label">Jam</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="minutes">00</div>
+                <div class="countdown-label">Menit</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="seconds">00</div>
+                <div class="countdown-label">Detik</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-title">Dania Mustika Putri</div>
+            <div class="footer-text">
+                Terima kasih telah menjadi pacar yang luar biasa. Aku tak sabar menciptakan lebih banyak kenangan indah bersamamu.
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="far fa-envelope"></i></a>
+            </div>
+            <div class="copyright">
+                Dibuat dengan cinta untukmu creator by Rizki © 2025
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const heartsBg = document.getElementById('hearts-bg');
+            const heartCount = 15;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                
+                // Random position
+                heart.style.left = Math.random() * 100 + 'vw';
+                
+                // Random size
+                const size = Math.random() * 20 + 10;
+                heart.style.width = size + 'px';
+                heart.style.height = size + 'px';
+                
+                // Random animation duration
+                heart.style.animationDuration = Math.random() * 10 + 10 + 's';
+                
+                // Random delay
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                
+                heartsBg.appendChild(heart);
+            }
+        }
+        
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const nextAnniversary = new Date(now.getFullYear(), 6, 19); // July is month 6 (0-indexed)
+            
+            // If this year's anniversary has passed, use next year's date
+            if (now > nextAnniversary) {
+                nextAnniversary.setFullYear(nextAnniversary.getFullYear() + 1);
+            }
+            
+            const diff = nextAnniversary - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Initialize
+        window.addEventListener('load', () => {
+            createHearts();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html>
